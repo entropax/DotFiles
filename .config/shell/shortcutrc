@@ -1,0 +1,32 @@
+# vim: filetype=sh
+alias \
+h="cd $HOME && ls -a" \
+D="cd $HOME/Downloads && ls -a" \
+cf="cd $XDG_CONFIG_HOME && ls -a" \
+cache="cd $HOME/.cache && ls -a" \
+lls="cd $HOME/.local/share && ls -a" \
+llb="cd $HOME/.local/bin && ls -a" \
+src="cd $HOME/C/prg/src && ls -a" \
+doc="cd $HOME/C/doc && ls -a" \
+mng="cd $HOME/C/mng && ls -a" \
+vv="cd $HOME/M/vi && ls -a" \
+pp="cd $HOME/M/im && ls -a" \
+mm="cd $HOME/M/so && ls -a" \
+mn="cd /mnt && ls -a" \
+
+alias \
+cfa="$EDITOR $XDG_CONFIG_HOME/shell/aliasrc" \
+cfs="$EDITOR $XDG_CONFIG_HOME/shell/shortcutrc" \
+cfp="$EDITOR $XDG_CONFIG_HOME/shell/profile" \
+cfn="$EDITOR $XDG_CONFIG_HOME/newsboat/config" \
+cfu="$EDITOR $XDG_CONFIG_HOME/newsboat/urls" \
+cfv="$EDITOR $XDG_CONFIG_HOME/nvim/init.vim" \
+cfx="$EDITOR $XDG_CONFIG_HOME/x11/xresources" \
+cfz="$EDITOR $XDG_CONFIG_HOME/zsh/.zshrc" \
+cfb="$EDITOR $HOME/C/prg/src/dwmblocks/config.h" \
+cfX="$EDITOR $XDG_CONFIG_HOME/sxiv/exec/key-handler" \
+cfm="$EDITOR $XDG_CONFIG_HOME/mutt/muttrc" \
+cfmb="$EDITOR $XDG_CONFIG_HOME/ncmpcpp/bindings" \
+cfmc="$EDITOR $XDG_CONFIG_HOME/ncmpcpp/config" \
+cfL="$EDITOR $XDG_CONFIG_HOME/lf/scope" \
+cfl="$EDITOR $XDG_CONFIG_HOME/lf/lfrc" \

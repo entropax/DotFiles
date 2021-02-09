@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	telegram-desktop="telegram-desktop -many -workdir  ~/.local/share/Telegram" \
+	ls="ls -ahN --color=auto --group-directories-first" \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	mkd="mkdir -pv" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+	ytd="youtube-dl --add-metadata -i -x -f bestaudio/best" \
+	ffmpeg="ffmpeg -hide_banner" \
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	YT="youtube-viewer" \
+	e="$EDITOR" \
+	f="$FILE" \
+	g="git" \
+	ka="killall" \
+	magit="nvim -c MagitOnly" \
+	p="sudo pacman" \
+	sdn="sudo shutdown -h now" \
+	trem="transmission-remote" \
+	v="$EDITOR" \
+	z="zathura"
+
+# Modify config files for some program:
+alias \
+	ref="source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc;" \
+	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
+	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
+
+# Special for git
+alias \
+	dotgit="git --git-dir=$HOME/dotfiles.git --work-tree=$HOME" \
