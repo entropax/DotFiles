@@ -1,5 +1,20 @@
 #!/bin/zsh
-### .profile file. Runs on login. Environmental variables are set here.###
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###
+###            )    )`					 	                    ###
+###     (     /\)  ((    (  `     `       (         )       (	###
+###    ))/   (  (__/     )(      (     `  )        /(      /(	###
+###   /((_) )\) /\ \__  (()\     )/    /(/(      )(_)     \()	###
+###  (_))   (_\_\ \ ,_\  ((_)_  ((_)  ((_)_\    ((_)    (_(\\	###
+###  /'__`\/' _ `\ \ \/ /\` __\/'__`\/\ '__`\  /'__`\  /\'\/'\	###
+### /\  __//\ \/\ \ \ \_\ \ \//\ \L\ \ \ \L\ \/\ \L\.\_\/>  </	###
+### \ \____\ \_\ \_\ \__\\ \_\\ \____/\ \ ,__/\ \__/.\_\/\_/\_\	###
+###  \/____/\/_/\/_/\/__/ \/_/ \/___/  \ \ \/  \/__/\/_/\//\/_/	###
+###                                     \ \_\			        ###
+###                                      \/_/			        ###
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###
+###Author:    Cain Maxwell <entropax@posteo.net>~~~~~~~~~~~~~~~~###
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###
+### .profile file runs on login. Environmental variable set here###
 
 ###########################
 ###-------BASICS--------###
@@ -17,7 +32,7 @@ export VISUAL="nvim"
 export SYSTEMD_EDITOR="nvim"
 
 ###########################
-###----~/ Clean-up:-----###
+###---Clean-up ~/HOME---###
 ###########################
 #export XDG_DOCUMENTS_DIR="$HOME/Documents"
 #export XDG_MUSIC_DIR="$HOME/Music"
@@ -57,11 +72,21 @@ export WWW_HOME="$XDG_CONFIG_HOME/w3m"
 export W3M_HOME="$XDG_CONFIG_HOME/w3m"
 
 ###########################
-###--Program settings:--###
+###--Program settings---###
 ###########################
+export GPG_AGENT_INFO  # the env file does not contain the export statement
+export SSH_AUTH_SOCK   # enable gpg-agent for ssh
+envfile="$HOME/.local/.gnupg/gpg-agent.env"
+if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
+    eval "$(cat "$envfile")"
+else
+    eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile")"
+fi
+
 export DICS="/usr/share/stardict/dic/"
 export SUDO_ASKPASS="$HOME/.local/bin/dmenupass"
 export FZF_DEFAULT_OPTS="--layout=reverse --height 40%"
+export FZF_DEFAULT_COMMAND='find .'
 export LESS=-R
 export LESS_TERMCAP_mb="$(printf '%b' '[1;31m')"
 export LESS_TERMCAP_md="$(printf '%b' '[1;36m')"

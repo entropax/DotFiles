@@ -133,7 +133,7 @@
     </property>
     <property name="plugin-7" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance2591;chromium.instance6480"/>
+      <property name="mpris-players" type="string" value="chromium.instance2069;chromium.instance2591;chromium.instance6480"/>
     </property>
   </property>
 </channel>
