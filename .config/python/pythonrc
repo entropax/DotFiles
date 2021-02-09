@@ -1,0 +1,49 @@
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###
+###            )    )`					 	###
+###     (     /\)  ((    (  `     `       (         )       (	###
+###    ))/   (  (__/     )(      (     `  )        /(      /(	###
+###   /((_) )\) /\ \__  (()\     )/    /(/(      )(_)     \()	###
+###  (_))   (_\_\ \ ,_\  ((_)_  ((_)  ((_)_\    ((_)    (_(\\	###
+###  /'__`\/' _ `\ \ \/ /\` __\/'__`\/\ '__`\  /'__`\  /\'\/'\	###
+### /\  __//\ \/\ \ \ \_\ \ \//\ \L\ \ \ \L\ \/\ \L\.\_\/>  </	###
+### \ \____\ \_\ \_\ \__\\ \_\\ \____/\ \ ,__/\ \__/.\_\/\_/\_\	###
+###  \/____/\/_/\/_/\/__/ \/_/ \/___/  \ \ \/  \/__/\/_/\//\/_/	###
+###                                     \ \_\			###
+###                                      \/_/			###
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###
+###Author:    Cain Maxwell <entropax@posteo.net>~~~~~~~~~~~~~~~~###
+###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###
+
+import os
+import readline
+import sys
+import datetime
+import colorama
+
+# Prompt customize
+colorama.init(autoreset=True)
+class Prompt:
+  def __str__(self):
+    print(self.prompt, end='')
+    return ''
+
+class PS1(Prompt):
+
+  @property
+  def prompt(self):
+    return '{brace_c}[{time_c}{time}{brace_c}]{prompt_c}>>> '.format(
+              brace_c  = colorama.Fore.BLACK + colorama.Style.BRIGHT,
+              # style is preserved, so the following are also bright:
+              prompt_c = colorama.Fore.LIGHTYELLOW_EX,
+              time_c   = colorama.Fore.GREEN,
+              time     = datetime.datetime.now().strftime('%H:%M'),
+            )
+
+sys.ps1 = PS1()
+sys.ps2 = "    \033[91m...\033[0m "
+
+# Disable .python_history file in HOME folder
+readline.write_history_file = lambda *args: None
+
+# Greating message
+print("HEELLOO BRO!")
