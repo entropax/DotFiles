@@ -13,9 +13,13 @@ alias \
 	mkd="mkdir -pv" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi"
-	ytd="youtube-dl --add-metadata -i -x -f bestaudio/best" \
+	ccat="highlight --out-format=ansi" \
+	ytd="youtube-dl --add-metadata -i -f bestvideo+bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner" \
+
+# SSH alias
+alias \
+    ent="ssh root@45.63.43.186" \
 
 # These common commands are just too long! Abbreviate them.
 alias \
@@ -36,7 +40,8 @@ alias \
 	ref="source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc;" \
 	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
 	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
+    claws-mail="claws-mail --alternate-config-dir "$XDG_DATA_HOME"/claws-mail" \
 
 # Special for git
 alias \
-	dotgit="git --git-dir=$HOME/dotfiles.git --work-tree=$HOME" \
+	dotgit="git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME" \

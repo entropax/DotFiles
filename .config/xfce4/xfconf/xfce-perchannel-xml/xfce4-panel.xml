@@ -72,6 +72,7 @@
     <property name="plugin-6" type="string" value="systray">
       <property name="square-icons" type="bool" value="true"/>
       <property name="known-legacy-items" type="array">
+        <value type="string" value="rambox"/>
         <value type="string" value="transmission-remote-gtk"/>
         <value type="string" value="xfce4-power-manager"/>
         <value type="string" value="bluetooth enabled"/>
@@ -80,6 +81,8 @@
         <value type="string" value="networkmanager applet"/>
       </property>
       <property name="known-items" type="array">
+        <value type="string" value="remmina-icon"/>
+        <value type="string" value="Rambox1"/>
         <value type="string" value="TelegramDesktop"/>
         <value type="string" value="blueman"/>
       </property>
@@ -133,7 +136,7 @@
     </property>
     <property name="plugin-7" type="string" value="pulseaudio">
       <property name="enable-keyboard-shortcuts" type="bool" value="true"/>
-      <property name="mpris-players" type="string" value="chromium.instance2069;chromium.instance2591;chromium.instance6480"/>
+      <property name="mpris-players" type="string" value="chromium.instance100661;chromium.instance117341;chromium.instance117844;chromium.instance1213;chromium.instance1282;chromium.instance1305;chromium.instance1330;chromium.instance1342;chromium.instance1364;chromium.instance1401;chromium.instance1402;chromium.instance1479;chromium.instance1622;chromium.instance1805;chromium.instance2069;chromium.instance2591;chromium.instance26316;chromium.instance2781;chromium.instance2840;chromium.instance4667;chromium.instance4989;chromium.instance6480;chromium.instance8282"/>
     </property>
   </property>
 </channel>
