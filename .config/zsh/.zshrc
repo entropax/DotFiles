@@ -15,10 +15,22 @@
 ###~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~###
 
 ### More colors and rice promtp:
+source ~/.config/zsh/zsh-git-prompt/zshrc.sh
 autoload -U colors && colors	# Load colors
 setopt autocd		            # Automatically cd into typed directory.
 setopt interactive_comments
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+
+
+PS1=$'┏╸%(?..%F{red}%?%f · )%B%(6~|%-3~/.../%2~|%3~)%b\n\\
+┗╸%F{blue}❯%f%F{cyan}❯%f%F{green}❯%f '
+RPS1='%@  $(git_super_status)'
+#For short path user $'%(5~|%-2~/.../%2~|%3~)' (if |true|false)
+# Old prompt
+#PS1=$'%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M \\
+#%{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b$(git_super_status) '
+
+### Main options
 #stty stop undef		        # Disable ctrl-s to freeze terminal.
 
 ### History in cache directory:
@@ -80,6 +92,7 @@ lfcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
+
 
 ### Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
