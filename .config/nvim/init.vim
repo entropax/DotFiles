@@ -72,7 +72,7 @@ syntax on
 "##########################"
 
 " IMPORTANT!!! Set leaderKey for any custom map
-    let mapleader =","
+    let mapleader =" "
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
